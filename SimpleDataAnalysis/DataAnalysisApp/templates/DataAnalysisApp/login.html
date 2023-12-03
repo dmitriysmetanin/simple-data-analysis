@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block header %}
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <form class="user" method="post" enctype='multipart/form-data'>
+        {% csrf_token %}
+        <div><input placeholder="Логин..." name="your_username"></div>
+        <div><input type="password" placeholder="Пароль..." name="your_password"></div>
+
+        <button type="submit">
+            Войти
+        </button>
+    </form>
+</div>
+
+{% endblock %}
+
+
