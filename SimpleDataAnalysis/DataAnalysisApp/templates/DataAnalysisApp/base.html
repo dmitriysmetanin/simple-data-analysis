@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'DataAnalysisApp/css/base.css' %}">
+    </head>
+    <body>
+        {% block header %}
+        {% endblock %}
+
+        <div class="wrapper">
+            <div class="section">
+                <div class="top_navbar">
+                    <div class="hamburger">
+                        <a href="#">
+                            <i class="fas fa-bars">
+                                <img src="{% static 'DataAnalysisApp/img/menu.png' %}">
+                            </i>
+                        </a>
+                    </div>
+                </div>
+                {% block content %}
+                {% endblock %}
+            </div>
+        
+            <div class="sidebar">
+                <div class="profile">
+                    <img src="https://alterozoom.com/images/235772_DHmQpMf4iOKkppEbmUxEgg.jpeg" alt="profile_picture">
+                    <h3>Дмитрий Сметанин</h3>
+                    <p>User</p>
+                </div>
+        
+                <ul>
+                    <li>
+                        <a href="/">
+                        <span class="icon"><i class="fas fa-home"></i></span>
+                        <span class="item">Home</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/dashboard">
+                        <span class="icon"><i class="fas fa-desktop"></i></span>
+                        <span class="item">Dashboard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/contact">
+                        <span class="icon"><i class="fas fa-chart-line"></i></span>
+                        <span class="item">Contact</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/admin">
+                        <span class="icon"><i class="fas fa-user-shield"></i></span>
+                        <span class="item">Admin</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <script>
+                var hamburger = document.querySelector(".hamburger");
+                hamburger.addEventListener("click", function(){
+                document.querySelector("body").classList.toggle("active");
+                })
+            </script>
+        </div>
+
+
+        {% block footer %}
+        {% endblock %}
+
+    </body>
+</html>
