@@ -31,6 +31,7 @@
                 </div>
         
                 <ul>
+                    {% if user.is_authenticated %}
                     <li>
                         <a href="/">
                         <span class="icon"><i class="fas fa-home"></i></span>
@@ -44,15 +45,24 @@
                         </a>
                     </li>
                     <li>
-                        <a href="/contact">
-                        <span class="icon"><i class="fas fa-chart-line"></i></span>
-                        <span class="item">Contact</span>
-                        </a>
-                    </li>
-                    <li>
                         <a href="/admin">
                         <span class="icon"><i class="fas fa-user-shield"></i></span>
                         <span class="item">Admin</span>
+                        </a>
+                    </li>
+                    {% endif %}
+                    {% if not user.is_authenticated %}
+                    <li>
+                        <a href="/registration/login">
+                        <span class="icon"><i class="fas fa-user-login"></i></span>
+                        <span class="item">Login</span>
+                        </a>
+                    </li>
+                    {% endif %}
+                    <li>
+                        <a href="/contact">
+                        <span class="icon"><i class="fas fa-chart-line"></i></span>
+                        <span class="item">Contact</span>
                         </a>
                     </li>
                 </ul>
