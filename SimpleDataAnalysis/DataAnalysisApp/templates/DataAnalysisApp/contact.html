@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+
+{% block header %}
+{% endblock %}
+
+{% block content %}
+<div>
+    <form method="post" enctype='multipart/form-data'>
+        {% csrf_token %}
+        
+        <div>
+            <div>
+                <label for="your_organization">Ваша организация</label>
+            </div>
+            <div>
+                <input type="text" name="your_organization">
+            </div>
+            
+        </div>
+
+        <div>
+            <div>
+                <label for="your_problem">Опишите проблему</label>
+            </div>  
+            <div>
+                <input type="text" name="your_problem">
+            </div>
+        </div>
+
+        <div>
+            <div>
+                <label for="your_contact">Как с вами связаться?</label>
+            </div>
+            <div>
+                <input type="text" name="your_contact">
+            </div>
+        </div>
+
+        <div>
+            <input type="submit" value="Отправить">
+        </div>
+        
+    </form>
+
+    
+    
+</div>
+{% endblock %}
